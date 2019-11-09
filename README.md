@@ -8,7 +8,7 @@ Starting from November, make a map following the schedule below:
 
 - [x] 1. Points
 
-  ![](day1_point_low_res.png)
+  ![](day1_points_low_res.png)
 
 - [ ] 2. Lines
 - [ ] 3. Polygons
