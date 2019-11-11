@@ -14,7 +14,12 @@ Starting from November, make a map following the schedule below:
 
   ![](day2_lines/images-output/animation-transports.gif)
 
-- [ ] 3. Polygons
+- [x] 3. Polygons
+
+  ![](day3_polygons/small-multiples-with-copyright-and-title-low-res.png)
+
+  High resolution image available in `day3_polygons` directory
+
 - [ ] 4. Hexagons(!)
 - [ ] 5. Raster
 - [ ] 6. Blue
