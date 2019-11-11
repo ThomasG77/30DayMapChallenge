@@ -6,6 +6,7 @@
 
 # Recipe from https://deparkes.co.uk/2015/05/01/make-a-grid-of-images-with-imagemagick/
 # If memory issue, look at https://blog.bigbinary.com/2018/09/12/configuring-memory-allocation-in-imagemagick.html
+# and https://github.com/ImageMagick/ImageMagick/issues/396#issuecomment-319569255
 # You need to export as images the atlas from QGIS to images-output directory before running this script
 cd ../images-output
 montage -density 100 -tile 13x20 -geometry +5+5 *.png ../small-multiples.png
@@ -18,5 +19,6 @@ convert small-multiples.png \
 
 convert small-multiples-with-copyright.png  -pointsize 256 -font "Ubuntu-Bold" -background white label:'World Countries' \
           +swap  -gravity Center -append    small-multiples-with-copyright-and-title.png
+convert small-multiples-with-copyright-and-title.png -resize 10%  small-multiples-with-copyright-and-title-low-res.png
 
 rm small-multiples-with-copyright.png small-multiples.png images-output/*.png small-multiples-with-copyright-and-title-*.png
