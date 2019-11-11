@@ -10,7 +10,10 @@ Starting from November, make a map following the schedule below:
 
   ![](day1_points_low_res.png)
 
-- [ ] 2. Lines
+- [x] 2. Lines
+
+  ![](day2_lines/images-output/animation-transports.gif)
+
 - [ ] 3. Polygons
 - [ ] 4. Hexagons(!)
 - [ ] 5. Raster
