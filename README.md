@@ -20,7 +20,10 @@ Starting from November, make a map following the schedule below:
 
   High resolution image available in `day3_polygons` directory
 
-- [ ] 4. Hexagons(!)
+- [x] 4. Hexagons(!)
+
+  ![](day4_hexagons/day4_hexagons_low_res.png)
+
 - [ ] 5. Raster
 - [ ] 6. Blue
 - [ ] 7. Red
