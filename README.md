@@ -24,7 +24,10 @@ Starting from November, make a map following the schedule below:
 
   ![](day4_hexagons/day4_hexagons_low_res.png)
 
-- [ ] 5. Raster
+- [x] 5. Raster
+
+  ![](day5_raster/nantes_city_water_islands_low_res.png)
+
 - [ ] 6. Blue
 - [ ] 7. Red
 - [ ] 8. Green
