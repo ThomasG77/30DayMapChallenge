@@ -30,7 +30,10 @@ Starting from November, make a map following the schedule below:
 
   ![](day5_raster/nantes_city_water_islands_low_res_jigsaw.png)
 
-- [ ] 6. Blue
+- [x] 6. Blue
+
+  ![](day6_blue/bathymetric_blueish_map_low_res.png)
+
 - [ ] 7. Red
 - [ ] 8. Green
 - [ ] 9. Yellow
