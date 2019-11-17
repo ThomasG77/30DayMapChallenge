@@ -34,7 +34,10 @@ Starting from November, make a map following the schedule below:
 
   ![](day6_blue/bathymetric_blueish_map_low_res.png)
 
-- [ ] 7. Red
+- [x] 7. Red
+
+  [![](day7_red/animation-day-7-red.gif)](https://githack.com/ThomasG77/30DayMapChallenge/master/day7_red/index.html)
+
 - [ ] 8. Green
 - [ ] 9. Yellow
 - [ ] 10. Black and white

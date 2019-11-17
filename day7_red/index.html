@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Accidents du travail</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.1.1/css/ol.css" type="text/css">
+
+    <link rel="stylesheet" href="static/css/ol3-sidebar.css" />
+    <link rel="stylesheet" href="static/css/rSlider.min.css">
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        html, body, #map {
+            height: 100%;
+            font: 10pt "Helvetica Neue", Arial, Helvetica, sans-serif;
+        }
+
+        .ol-control button {
+            background-color: rgba(255, 0, 0, .5);
+        }
+        .ol-control button:focus, .ol-control button:hover {
+            background-color: rgba(255, 0, 0, .7);
+        }
+        .rs-container .rs-selected {
+            background-color: #ff6f6f;
+            border: 1px solid #ff6f6f;
+            border-color: rgb(255, 15, 15);
+        }
+        .rs-tooltip {
+            border: 1px solid rgb(255, 15, 15);
+    </style>
+</head>
+<body>
+    <div id="sidebar" class="sidebar collapsed">
+        <!-- Nav tabs -->
+        <div class="sidebar-tabs">
+            <ul role="tablist">
+                <li><a href="#home" role="tab"><i class="fa fa-bars"></i></a></li>
+                <li><a href="https://github.com/ThomasG77/30DayMapChallenge/tree/master/day7_red" role="tab" target="_blank"><i class="fa fa-github"></i></a></li>
+            </ul>
+        </div>
+
+        <!-- Tab panes -->
+        <div class="sidebar-content">
+            <div class="sidebar-pane" id="home">
+                <h1 class="sidebar-header">
+                    Accidents du travail
+                    <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+                </h1>
+
+                <p>Nous avons repris les informations ci-dessous mais ne sommes pas le producteur des données. Ce qui est à notre crédit est le développement de cette mini-application, le reste est mentionné ci-dessous. Vous pouvez cliquez sur les points pour avoir les informations (comme sur <a href="https://www.google.com/maps/d/viewer?mid=1kzwBvaynV86MGfGxGswdP4RBrcr29CxD&ll=49.45631240395406%2C5.6248351978622395&z=9" target="_blank">la carte Google Maps "officielle"</a>). <br> Vous pouvez utilisez le "slider" pour naviguer dans le temps.
+                <br>Il faut aussi noter que vous pouvez aussi dézoomez pour voir les territoires de la France d'outre-mer<p>
+                <h2 id="summary-title"></h2>
+                <p id="summary"></p>
+                <input id="animate-no-cumul" type="button" value="Lancer l'animation mois par mois sans cumul"/>
+                <input id="animate-with-cumul" type="button" value="Lancer l'animation mois par mois avec cumul"/>
+                <p id="infos"></p>
+            </div>
+        </div>
+    </div>
+    <div id="myslider" style="right: 30px; bottom: 30px;position: absolute;height: 80px;width: 700px;background-color: white;z-index: 2000;">
+      <div style="width: 600px;right:50px;top:20px;position: absolute;">
+        <input type="text" id="sampleSlider" />
+      </div>
+    </div>
+    <div id="map" class="sidebar-map">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.1.1/build/ol.js"></script>
+    <script src="static/js/zip.js"></script>
+    <!-- <script src="static/js/ol3-sidebar.min.js"></script> -->
+    <script src="static/js/ol3-sidebar.js"></script>
+    <script src="static/js/rSlider.min.js"></script>
+
+    <script>
+      // Declare worker scripts path for zip manipulation
+      zip.workerScriptsPath = 'static/js/';
+
+      // Declare style
+      var style = new ol.style.Style({
+        image: new ol.style.Circle({
+          radius: 4,
+          fill: new ol.style.Fill({
+            color: 'red'
+          }),
+          stroke: new ol.style.Stroke({
+            width: 1,
+            color: 'white'
+          })
+        })
+      })
+
+      // Declare layer
+      var vector = new ol.layer.Vector({
+        source: new ol.source.Vector(),
+        style: style
+      });
+
+      // Declare map and add MapQuest layer and KML layer
+      var map = new ol.Map({
+        target: 'map',
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          }),
+          vector
+        ],
+        view: new ol.View({
+          center: ol.proj.transform(
+            [2, 45],
+            'EPSG:4326',
+            'EPSG:3857'
+          ),
+          zoom: 5
+        })
+      });
+
+      var sidebar = new ol.control.Sidebar({
+        element: 'sidebar',
+        position: 'left'
+      });
+
+      map.addControl(sidebar);
+      sidebar.open('home');
+
+      var allFeatures = [];
+
+      // Url to KMZ file (in fact, it's a kml zipped file and not a gzipped file)
+      // var url = 'http://www.spc.noaa.gov/products/watch/ActiveWW.kmz';
+      var url = 'http://www.google.com/maps/d/u/0/kml?mid=1kzwBvaynV86MGfGxGswdP4RBrcr29CxD';
+      var cors_api_host = 'cors-anywhere.herokuapp.com';
+      var cors_api_url = 'https://' + cors_api_host + '/';
+      // var url = '/proxy/www.spc.noaa.gov/products/watch/ActiveWW.kmz';
+
+      var months = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
+      var end = 11;
+
+      // Function to ease KML feature reading
+      function addFeatures(text) {
+        let formatter = new ol.format.KML({
+          extractStyles: false
+        });
+        let kml_features = formatter.readFeatures(text, {
+          dataProjection: 'EPSG:4326',
+          featureProjection: 'EPSG:3857'
+        });
+
+        let avec_mois = kml_features
+          .filter(feature => ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'].some(subel => feature.get('name').includes(subel)))
+          .map(feature => {
+            if (feature.get('name') == 'Un ouvrier décédé (juinà') {
+              feature.set('name', feature.get('name').replace('(juinà', '(juin)'));
+            }
+            let mois = feature.get('name').match(/\(([ûéa-z]*)\)+/).find(result => !result.includes(')'));
+            feature.set('mois', mois);
+            return feature;
+          });
+        let sans_mois = kml_features
+          .filter(feature => !(months.some(subel => feature.get('name').includes(subel)))).map(feature => {
+            if (feature.get('name') == 'Un chauffeur livreur décédé') {
+              feature.set('name', 'Un chauffeur livreur décédé');
+              feature.set('mois', 'mai');
+            }
+            return feature;
+          });
+        mySlider = new rSlider({
+            target: '#sampleSlider',
+            values: months.slice(0, end),
+            range: true,
+            tooltip: true,
+            scale: true,
+            labels: true,
+            set: [months[0], months.slice(0, end).slice(-1)],
+            onChange: function (vals) {
+              vals = vals.split(',')
+                  .map(mois => months.indexOf(mois));
+              vals[1] = vals[1] + 1;
+              let selectedMonths = months.slice(...vals);
+              vector.getSource().clear();
+              vector.getSource().addFeatures(
+                allFeatures.filter(feature => selectedMonths.includes(feature.get('mois')))
+              );
+            }
+        });
+        allFeatures = [...avec_mois, ...sans_mois];
+        vector.getSource().addFeatures(allFeatures);
+      }
+
+      function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+
+      document.querySelector('#animate-no-cumul').addEventListener('click', async function() {
+        for (let i = 0; i < end; i++) {
+          mySlider.setValues(months[i], months[i])
+          await sleep(1500);
+        };
+        await sleep(1500);
+        mySlider.setValues(months[0], months[end - 1])
+      });
+      document.querySelector('#animate-with-cumul').addEventListener('click', async function() {
+        for (let i = 0; i < end; i++) {
+          mySlider.setValues(0, months[i])
+          await sleep(1500);
+        };
+        await sleep(1500);
+        mySlider.setValues(months[0], months[end - 1])
+      });
+
+let infos = document.getElementById('infos');
+let displayFeatureInfo = function(pixel) {
+  let feature = map.forEachFeatureAtPixel(pixel, function(feature) {
+    return feature;
+  });
+  if (feature) {
+    infos.innerHTML = '<b>' + feature.get('name') + '</b>' + '<br>' + feature.get('description') + '<br>' + `<a href="http://www.google.com/search?q=${encodeURI(feature.get('description'))}" target="_blank">Recherchez les articles associées via un moteur de recherche</a>`;
+  } else {
+    infos.innerHTML = '';
+    console.log('Nothing here');
+  }
+};
+
+map.on('singleclick', function(evt) {
+  if (evt.dragging) {
+    // info.tooltip('hide');
+    return;
+  }
+  displayFeatureInfo(map.getEventPixel(evt.originalEvent));
+});
+      
+      // Function to unzip content from blob and execute callback on
+      // first entry (not generic but assumed for the demo)
+      function unzipFromBlob(callback) {
+        return function unzip(blob) {
+          // use a BlobReader to read the zip from a Blob object
+          zip.createReader(new zip.BlobReader(blob), function(reader) {
+            // get all entries from the zip
+            reader.getEntries(function(entries) {
+              if (entries.length) {
+                // get first entry content as text
+                entries[0].getData(new zip.TextWriter(), function(text) {
+                  // text contains the entry data as a String
+                  console.log(text);
+                  var parser = new DOMParser();
+                  var xmlDoc = parser.parseFromString(text,"text/xml");
+                  document.querySelector('#summary-title').innerHTML = xmlDoc.getElementsByTagName('Document')[0].childNodes[1].textContent;
+                  document.querySelector('#summary').innerHTML = xmlDoc.getElementsByTagName('Document')[0].childNodes[3].textContent.replace(/@DuAccident/g, '<a href="https://twitter.com/DuAccident" target="_blank">@DuAccident</a>');
+                  callback(text);
+                  // close the zip reader
+                  reader.close(function() {
+                    // onclose callback
+                  });
+
+                }, function(current, total) {
+                  // onprogress callback
+                });
+              }
+            });
+          }, function(error) {
+            // onerror callback
+          });
+        };
+      }
+
+      // Function to make ajax call and make a callback on success
+      function ajaxKMZ(url) {
+        return fetch(url)
+        .then(function(response) {
+          // Run when the request is successful
+          if (!response.ok) {
+            throw new Error("HTTP error, status = " + response.status);
+          }
+          // console.log(response.text());
+          return response.blob();
+          // callback(response);
+        }).then(function(response) {
+          return response;
+        })
+        .catch(function(e) {
+          // Process the error
+        })
+      }
+
+      var combinedCallback = unzipFromBlob(addFeatures);
+      (async function() {
+        var blob = await ajaxKMZ(cors_api_url + url);
+        combinedCallback(blob);
+      })();
+
+    </script>
+</body>
+</html>
