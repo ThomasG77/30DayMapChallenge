@@ -36,6 +36,10 @@
         }
         .rs-tooltip {
             border: 1px solid rgb(255, 15, 15);
+        }
+        .rs-container .rs-scale span ins {
+          font-size: 11px;
+        }
     </style>
 </head>
 <body>
@@ -66,8 +70,8 @@
             </div>
         </div>
     </div>
-    <div id="myslider" style="right: 30px; bottom: 30px;position: absolute;height: 80px;width: 700px;background-color: white;z-index: 2000;">
-      <div style="width: 600px;right:50px;top:20px;position: absolute;">
+    <div id="myslider" style="right: 20px; bottom: 25px;position: absolute;height: 90px;width: 580px;background-color: white;z-index: 2000;">
+      <div style="right:40px;top:40px;position: absolute;">
         <input type="text" id="sampleSlider" />
       </div>
     </div>
@@ -175,6 +179,7 @@
             target: '#sampleSlider',
             values: months.slice(0, end),
             range: true,
+            width: 500,
             tooltip: true,
             scale: true,
             labels: true,
