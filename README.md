@@ -42,7 +42,10 @@ Starting from November, make a map following the schedule below:
   
   ![](day8_green/small-multiples-with-title-low-res.png)
 
-- [ ] 9. Yellow
+- [x] 9. Yellow
+
+  ![](day9_yellow/production-mondiale-citrons-limes-low-res.png)
+
 - [ ] 10. Black and white
 - [ ] 11. Elevation
 - [ ] 12. Movement

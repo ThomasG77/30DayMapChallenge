@@ -1,0 +1,10 @@
+https://raw.githubusercontent.com/hjnilsson/country-flags/master/svg/za.svg
+https://raw.githubusercontent.com/hjnilsson/country-flags/master/svg/us.svg
+https://raw.githubusercontent.com/hjnilsson/country-flags/master/svg/es.svg
+https://raw.githubusercontent.com/hjnilsson/country-flags/master/svg/tr.svg
+https://raw.githubusercontent.com/hjnilsson/country-flags/master/svg/br.svg
+https://raw.githubusercontent.com/hjnilsson/country-flags/master/svg/ar.svg
+https://raw.githubusercontent.com/hjnilsson/country-flags/master/svg/cn.svg
+https://raw.githubusercontent.com/hjnilsson/country-flags/master/svg/in.svg
+https://raw.githubusercontent.com/hjnilsson/country-flags/master/svg/mx.svg
+https://raw.githubusercontent.com/hjnilsson/country-flags/master/svg/ir.svg
