@@ -38,7 +38,10 @@ Starting from November, make a map following the schedule below:
 
   [![](day7_red/animation-day-7-red.gif)](https://raw.githack.com/ThomasG77/30DayMapChallenge/master/day7_red/index.html)
 
-- [ ] 8. Green
+- [x] 8. Green
+  
+  ![](day8_green/small-multiples-with-title-low-res.png)
+
 - [ ] 9. Yellow
 - [ ] 10. Black and white
 - [ ] 11. Elevation
