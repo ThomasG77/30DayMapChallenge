@@ -46,7 +46,10 @@ Starting from November, make a map following the schedule below:
 
   ![](day9_yellow/production-mondiale-citrons-limes-low-res.png)
 
-- [ ] 10. Black and white
+- [x] 10. Black and white
+
+  ![](day10_black_and_white/populated-places-or-human-desert-low-res.png)
+
 - [ ] 11. Elevation
 - [ ] 12. Movement
 - [ ] 13. Tracks
