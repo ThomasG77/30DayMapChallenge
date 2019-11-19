@@ -50,7 +50,10 @@ Starting from November, make a map following the schedule below:
 
   ![](day10_black_and_white/populated-places-or-human-desert-low-res.png)
 
-- [ ] 11. Elevation
+- [x] 11. Elevation
+
+  ![](day11_elevation/ridge-map-nantes-low-res.png)
+
 - [ ] 12. Movement
 - [ ] 13. Tracks
 - [ ] 14. Boundaries
