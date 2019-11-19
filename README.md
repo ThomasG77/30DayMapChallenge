@@ -54,7 +54,10 @@ Starting from November, make a map following the schedule below:
 
   ![](day11_elevation/ridge-map-nantes-low-res.png)
 
-- [ ] 12. Movement
+- [x] 12. Movement
+
+  ![](day12_movement/lignes-ferroviaires-vitesse-maximum-low-res.png)
+
 - [ ] 13. Tracks
 - [ ] 14. Boundaries
 - [ ] 15. Names
