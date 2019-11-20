@@ -72,7 +72,7 @@ done;
 # montage -density 100 -tile 12x7 -geometry +0+0 *.png ../small-multiples.png
 
 # cd ..
-# convert small-multiples-with-copyright.png  -pointsize 512 -font "Tuffy-Bold" -background white label:'Green areas of French cities European Urban Atlas 2012' \
+# convert small-multiples.png  -pointsize 512 -font "Tuffy-Bold" -background white label:'Green areas of French cities European Urban Atlas 2012' \
 #           +swap  -gravity Center -append    small-multiples-with-title.png
 # convert small-multiples-with-title.png -resize 3.5% small-multiples-with-title-low-res.png
 # convert small-multiples-with-title.png -resize 25% small-multiples-medium.png
