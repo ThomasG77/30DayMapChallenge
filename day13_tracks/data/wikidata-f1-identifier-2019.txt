@@ -1,0 +1,22 @@
+identifier;name;country;wikidata_url;url_osm;comments;order;date
+Q171288;Melbourne Grand Prix Circuit;Australia;https://www.wikidata.org/wiki/Q171288;https://www.openstreetmap.org/relation/280443;;1;2019-03-17
+Q171332;Bahrain International Circuit;Bahrain;https://www.wikidata.org/wiki/Q171332;https://www.openstreetmap.org/relation/284538;;2;2019-03-31
+Q171358;Shanghai International Circuit;China;https://www.wikidata.org/wiki/Q171358;https://www.openstreetmap.org/relation/2094941;;3;2019-04-14
+Q17004958;Baku City Circuit;Azerbaijan;https://www.wikidata.org/wiki/Q17004958;;"layer in ""own"" directory";4;2019-04-28
+Q171404;Circuit de Barcelona-Catalunya;Spain;https://www.wikidata.org/wiki/Q171404;https://www.openstreetmap.org/relation/2049529;;5;2019-05-12
+Q171400;Circuit de Monaco;Monaco;https://www.wikidata.org/wiki/Q171400;https://www.openstreetmap.org/relation/148194;;6;2019-05-26
+Q172860;Circuit Gilles Villeneuve;Canada;https://www.wikidata.org/wiki/Q172860;https://www.openstreetmap.org/relation/284595;;7;2019-06-09
+Q171424;Circuit Paul Ricard;France;https://www.wikidata.org/wiki/Q171424;https://www.openstreetmap.org/relation/10316343;;8;2019-06-23
+Q171566;Red Bull Ring;Austria;https://www.wikidata.org/wiki/Q171566;https://www.openstreetmap.org/relation/5309181;;9;2019-06-30
+Q171402;Silverstone Circuit;UK;https://www.wikidata.org/wiki/Q171402;https://www.openstreetmap.org/relation/51162;;10;2019-07-14
+Q152408;Hockenheimring;Germany;https://www.wikidata.org/wiki/Q152408;https://www.openstreetmap.org/relation/284588;;11;2019-07-28
+Q171356;Hungaroring;Hungary;https://www.wikidata.org/wiki/Q171356;https://www.openstreetmap.org/way/231328650;;12;2019-08-04
+Q172851;Circuit de Spa-Francorchamps;Belgique;https://www.wikidata.org/wiki/Q172851;https://www.openstreetmap.org/relation/284560;;13;2019-09-01
+Q171417;Autodromo Nazionale Monza;Italy;https://www.wikidata.org/wiki/Q171417;https://www.openstreetmap.org/relation/284565;;14;2019-09-08
+Q171390;Marina Bay Street Circuit;Singapore;https://www.wikidata.org/wiki/Q171390;https://www.openstreetmap.org/relation/421263;;15;2019-09-22
+Q174004;Sochi Autodrom;Russia;https://www.wikidata.org/wiki/Q174004;https://www.openstreetmap.org/way/234329382;;16;2019-09-29
+Q174170;Suzuka International Racing Course;Japan;https://www.wikidata.org/wiki/Q174170;https://www.openstreetmap.org/relation/284570;;17;2019-10-13
+Q173099;Autódromo Hermanos Rodríguez;Mexico;https://www.wikidata.org/wiki/Q173099;https://www.openstreetmap.org/way/520140803;;18;2019-10-27
+Q59626;Circuit of the Americas;USA;https://www.wikidata.org/wiki/Q59626;https://www.openstreetmap.org/relation/6537729;;19;2019-11-03
+Q171387;Autódromo José Carlos Pace;Brazil;https://www.wikidata.org/wiki/Q171387;https://www.openstreetmap.org/relation/6781071;;20;2019-11-17
+Q172869;Yas Marina Circuit;Abu Dhabi;https://www.wikidata.org/wiki/Q172869;https://www.openstreetmap.org/way/168477013;;21;2019-12-01

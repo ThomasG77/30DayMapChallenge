@@ -58,7 +58,10 @@ Starting from November, make a map following the schedule below:
 
   ![](day12_movement/lignes-ferroviaires-vitesse-maximum-low-res.png)
 
-- [ ] 13. Tracks
+- [x] 13. Tracks
+
+  ![](day13_tracks/quiz-formula-1-with-title-low-res.png)
+
 - [ ] 14. Boundaries
 - [ ] 15. Names
 - [ ] 16. Places
