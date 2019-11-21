@@ -66,7 +66,10 @@ Starting from November, make a map following the schedule below:
 
   ![](day14_boundaries/berlin-west-vs-berlin-east-viewpoint-2019-low-res.png)
 
-- [ ] 15. Names
+- [x] 15. Names
+
+  ![](day15_names/name-thomas-low-res.png)
+
 - [ ] 16. Places
 - [ ] 17. Zones
 - [ ] 18. Globe
