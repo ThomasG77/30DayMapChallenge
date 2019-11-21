@@ -63,6 +63,9 @@ Starting from November, make a map following the schedule below:
   ![](day13_tracks/quiz-formula-1-with-title-low-res.png)
 
 - [ ] 14. Boundaries
+
+  ![](day14_boundaries/berlin-west-vs-berlin-east-viewpoint-2019-low-res.png)
+
 - [ ] 15. Names
 - [ ] 16. Places
 - [ ] 17. Zones
