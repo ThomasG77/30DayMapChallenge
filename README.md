@@ -70,7 +70,12 @@ Starting from November, make a map following the schedule below:
 
   ![](day15_names/name-thomas-low-res.png)
 
-- [ ] 16. Places
+- [x] 16. Places
+
+  ![](day16_places/production-pommes-2015-france-low-res.png)
+
+  ![](day16_places/production-poires-2015-france-low-res.png)
+
 - [ ] 17. Zones
 - [ ] 18. Globe
 - [ ] 19. Urban
