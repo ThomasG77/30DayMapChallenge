@@ -1,0 +1,10 @@
+title;description
+Grands pôles urbains (plus de 10 000 emplois);Unités urbaines comptant au moins 10 000 emplois
+Couronnes des grands pôles urbains;Ensemble des communes dont au moins 40 % des actifs occupés résidents travaillent hors de leur commune de résidence, dans un grand pôle ou dans des communes de sa couronne
+Communes multipolarisées des grandes aires urbaines;Communes situées hors des grandes aires urbaines dont au moins 40 % des actifs occupés résidents travaillent dans plusieurs grandes aires urbaines, sans atteindre ce seuil avec une seule d’entre elles, et qui forment avec elles un espace d’un seul tenant.
+Moyens pôles (5 000 à 10000 emplois);Unités urbaines comptant de 5 000 à moins de 10 000 emplois
+Couronnes des moyens pôles;Ensemble des communes dont au moins 40 % des actifs occupés résidents travaillent hors de leur commune de résidence, dans un pôle moyen ou dans des communes de sa couronne
+Petits pôles (moins de 5000 emplois); Unités urbaines comptant de 1 500 à moins de 5 000 emplois
+Couronnes des petits pôles;Ensemble des communes dont au moins 40 % des actifs occupés résidents travaillent hors de leur commune de résidence, dans un petit pôle ou dans des communes de sa couronne
+Autres communes multipolarisées; Communes situées hors de l’espace des grandes aires urbaines (111+112+120) et hors des petites (221+222) ou moyennes aires (211+212), dont au moins 40 % des actifs occupés résidents travaillent dans plusieurs aires sans atteindre ce seuil avec une seule d’entre elles, et qui forment avec elles un ensemble d’un seul tenant.
+Communes isolées hors influence des pôles;Ensemble des communes situées hors de l’espace des grandes aires urbaines et hors de l’espace des autres aires

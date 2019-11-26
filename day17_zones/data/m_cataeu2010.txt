@@ -1,0 +1,10 @@
+identifier;libelle
+111;Commune appartenant à un grand pôle (10 000 emplois ou plus)
+112;Commune appartenant à la couronne d'un grand pôle
+120;Commune multipolarisée des grandes aires urbaines
+211;Commune appartenant à un moyen pôle (5 000 à moins de 10 000 emplois)
+212;Commune appartenant à la couronne d'un moyen pôle
+221;Commune appartenant à un petit pôle (de 1 500 à moins de 5 000 emplois)
+222;Commune appartenant à la couronne d'un petit pôle
+300;Autre commune multipolarisée
+400;Commune isolée hors influence des pôles

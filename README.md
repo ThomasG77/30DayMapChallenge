@@ -76,7 +76,10 @@ Starting from November, make a map following the schedule below:
 
   ![](day16_places/production-poires-2015-france-low-res.png)
 
-- [ ] 17. Zones
+- [x] 17. Zones
+
+  ![](day17_zones/polarisation-aires-urbaines-low-res.png)
+
 - [ ] 18. Globe
 - [ ] 19. Urban
 - [ ] 20. Rural
