@@ -81,8 +81,15 @@ Starting from November, make a map following the schedule below:
   ![](day17_zones/polarisation-aires-urbaines-low-res.png)
 
 - [ ] 18. Globe
-- [ ] 19. Urban
-- [ ] 20. Rural
+
+- [x] 19. Urban
+
+  ![](day19_urban/urbain-et-rural-low-res.png)
+
+- [x] 20. Rural
+
+  ![](day20_rural/rural-et-urbain-low-res.png)
+
 - [ ] 21. Environment
 - [ ] 22. Built environment
 - [ ] 23. Population
