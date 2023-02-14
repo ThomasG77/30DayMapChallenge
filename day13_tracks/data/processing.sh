@@ -1,5 +1,5 @@
-for i in *.ql;
-  do query-overpass < ${i%.*}".ql" > ${i%.*}".geojson";
+for i in *.overpassql;
+  do query-overpass < ${i%.*}".overpassql" > ${i%.*}".geojson";
   ogr2ogr -f GeoJSON ${i%.*}"_lines.geojson" ${i%.*}.geojson -nln ${i%.*}_lines -dialect sqlite -sql "SELECT * FROM "${i%.*}" WHERE ST_GeometryType(GEOMETRY) IN ('LINESTRING', 'MULTILINESTRING')"
 done;
 

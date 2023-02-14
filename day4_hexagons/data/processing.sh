@@ -1,5 +1,5 @@
 wget https://download.geofabrik.de/europe/france/pays-de-la-loire-latest.osm.pbf
-query-overpass query.ql > pays-de-la-loire.geojson
+query-overpass query.overpassql > pays-de-la-loire.geojson
 
 # Commerces
 ogr2ogr -f GPKG -nln commerces commerces_all.gpkg pays-de-la-loire-latest.osm.pbf \
